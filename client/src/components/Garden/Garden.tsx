@@ -12,10 +12,36 @@ interface GardenProps {
   onBack: () => void;
 }
 
-const findNonOverlappingPosition = () => {
-  // Temporary stub – return a basic default position
-  return { x: 0, y: 0, z: 0 };
+const findNonOverlappingPosition = (
+  existingPositions: { x: number; z: number }[],
+  radius = 1.5,
+  maxAttempts = 100,
+  bounds = 10
+): { x: number; z: number } => {
+  let attempt = 0;
+
+  while (attempt < maxAttempts) {
+    const x = Math.random() * bounds * 2 - bounds;
+    const z = Math.random() * bounds * 2 - bounds;
+
+    const isOverlapping = existingPositions.some(pos => {
+      const dx = pos.x - x;
+      const dz = pos.z - z;
+      const distance = Math.sqrt(dx * dx + dz * dz);
+      return distance < radius * 2;
+    });
+
+    if (!isOverlapping) {
+      return { x, z };
+    }
+
+    attempt++;
+  }
+
+  console.warn("Could not find non-overlapping position, returning fallback.");
+  return { x: 0, z: 0 };
 };
+
 
 const Garden: React.FC<GardenProps> = ({ onBack }) => {
   const [showControls, setShowControls] = useState(true);
