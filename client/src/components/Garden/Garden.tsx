@@ -12,6 +12,11 @@ interface GardenProps {
   onBack: () => void;
 }
 
+const findNonOverlappingPosition = () => {
+  // Temporary stub – return a basic default position
+  return { x: 0, y: 0, z: 0 };
+};
+
 const Garden: React.FC<GardenProps> = ({ onBack }) => {
   const [showControls, setShowControls] = useState(true);
   const [loading, setLoading] = useState(true);
