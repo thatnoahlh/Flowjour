@@ -28,9 +28,7 @@ This project was created during a hackathon centered around **mental health**. O
 - Node.js (v18 or later recommended)
 - npm
 
-### Installation
+### github page
 
-```bash
-git clone https://github.com/thatnoahlh/Flowjour.git
-cd Flowerjour
-npm install --save-dev gh-pages
+```
+https://thatnoahlh.github.io/Flowjour/
