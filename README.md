@@ -33,4 +33,4 @@ This project was created during a hackathon centered around **mental health**. O
 ```bash
 git clone https://github.com/thatnoahlh/Flowjour.git
 cd Flowerjour
-npm install
+npm install --save-dev gh-pages
