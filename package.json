@@ -13,7 +13,7 @@
   "build:frontend": "vite build",
   "predeploy": "npm run build:frontend",
   "deploy": "gh-pages -d dist/public"
-}
+  },
   "dependencies": {
     "@fontsource/inter": "^5.2.5",
     "@jridgewell/trace-mapping": "^0.3.25",
